@@ -13695,3 +13695,34 @@ Processing by BlogsController#confirm as HTML
 Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-04-30 16:50:55 +0900
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#top as HTML
+  Rendering blogs/top.html.erb within layouts/application
+  Rendered blogs/top.html.erb within layouts/application (262.4ms)
+Completed 200 OK in 333ms (Views: 324.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2018-04-30 16:50:57 +0900
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (2.9ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (46.7ms)
+Completed 200 OK in 83ms (Views: 56.8ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/blogs/new" for 127.0.0.1 at 2018-04-30 16:50:58 +0900
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/_form.html.erb (27.7ms)
+  Rendered blogs/new.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 68ms (Views: 63.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-30 16:50:59 +0900
+Processing by BlogsController#top as HTML
+  Rendering blogs/top.html.erb within layouts/application
+  Rendered blogs/top.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 78ms (Views: 70.9ms | ActiveRecord: 0.0ms)
+
+
