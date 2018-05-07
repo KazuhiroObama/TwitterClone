@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# セキュアパスワードメソッドを利用するためにGemインストール
+gem 'bcrypt', '3.1.11'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
