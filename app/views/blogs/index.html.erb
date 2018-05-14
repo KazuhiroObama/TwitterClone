@@ -4,10 +4,18 @@
   <p class="alert alert-info"><%= notice %></p>
 <% end %>
 
+
 <% @blogs.each do |blog| %>
   <div class="contain">
     <h2><%= blog.content %></h2>
-    <button class="btn btn-primary"><%= link_to '編集', edit_blog_path(blog.id) %></button>
-    <button class="btn btn-danger"><%= link_to '削除', blog_path(blog.id), method: :delete, data: { confirm: '本当に編集していいですか？' } %></button>
+      <% if current_user.id == blog.user_id %>
+        <button class="btn btn-primary"><%= link_to '編集', edit_blog_path(blog.id) %></button>
+        <button class="btn btn-danger"><%= link_to '削除', blog_path(blog.id), method: :delete, data: { confirm: '本当に編集していいですか？' } %></button>
+      <% end %>
+      <% if current_user.favorites.find_by(blog_id: blog.id).present? %>
+        <%= link_to 'お気に入り解除', favorite_path(id: Favorite.find_by(user_id: current_user.id, blog_id: blog.id).id, blog_id: blog.id), method: :delete, calss: 'btn btn-warning' %>
+      <% else %>
+        <%= link_to 'お気に入り登録', favorites_path(blog_id: blog.id), method: :post, class: 'btn btn-success' %>
+      <% end %>
   </div>
 <% end %>
