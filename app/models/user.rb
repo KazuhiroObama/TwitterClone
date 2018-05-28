@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :blogs
   has_many :favorites
   has_many :favorites_blogs, through: :favorites, source: :blog
+  validates :image, presence: true
+  mount_uploader :image,ImageUploader
 end

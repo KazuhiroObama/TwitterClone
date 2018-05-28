@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :pictures
+  resources :pictures do
+    collection do
+      post :confirm
+    end
+  end
   resources :contacts
   root to: 'users#top'
   resources :blogs do

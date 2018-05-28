@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>画像一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan=""></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pictures.each do |picture| %>
+      <tr>
+        <td class="uploadimage"><%= image_tag picture.image %></td>
+        <td><a href="/pictures/<%= picture.id %>"><span class="glyphicon glyphicon-eye-open" aria-hidden="true">詳細</span></a></td>
+        <td><a href="/pictures/<%= picture.id %>/edit"><span class="glyphicon glyphicon-refresh" aria-hidden="true">変更</span></a></td>
+        <td><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/pictures/<%= picture.id %>"><span class="glyphicon glyphicon-trash" aria-hidden="true">削除</span></a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Picture', new_picture_path %>

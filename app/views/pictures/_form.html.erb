@@ -1,0 +1,15 @@
+<%= form_with(model: picture, local: true, url:confirm_pictures_path) do |form| %>
+
+  <div class="field">
+    <%= form.label :image %>
+    <!-- confirmからnew移動時、upした画像を表示 -->
+    <%= image_tag(@picture.image.url) if @picture.image.url %>
+    <%= form.file_field :image, id: :picture_image %>
+    <!-- confirmからnew移動時、情報を保存 -->
+    <%= form.hidden_field :image_cache %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

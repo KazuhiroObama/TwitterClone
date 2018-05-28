@@ -36,6 +36,11 @@ gem 'jbuilder', '~> 2.5'
 # セキュアパスワードメソッドを利用するためにGemインストール
 gem 'bcrypt', '3.1.11'
 
+# 画像アップロード用Gem
+gem 'carrierwave'
+# 画像サイズ調整用Gem
+gem 'mini_magick'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
@@ -56,6 +61,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # ローカル環境でのメール送信確認用
   gem 'letter_opener_web'
+  # テストデータ用、ランダム値挿入
+  gem 'faker'
+  # デバッグ用　コマンド "binding.pry" 終了時は"Ctrl+d"
+  gem 'pry-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

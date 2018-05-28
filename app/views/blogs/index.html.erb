@@ -4,8 +4,8 @@
   <p class="alert alert-info"><%= notice %></p>
 <% end %>
 
-
 <% @blogs.each do |blog| %>
+
   <div class="contain">
     <h2><%= blog.content %></h2>
       <% if current_user.id == blog.user_id %>
